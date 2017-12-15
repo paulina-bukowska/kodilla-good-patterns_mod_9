@@ -4,7 +4,8 @@ import java.time.LocalDateTime;
 
 public class BookOrderRepository implements OrderRepository {
     @Override
-    public boolean createOrder(User user, LocalDateTime timeOrder) {
-        return false;
+    public boolean createOrder(OrderRequest orderRequest) {
+        System.out.println("Writing this order to the database");
+        return true;
     }
 }

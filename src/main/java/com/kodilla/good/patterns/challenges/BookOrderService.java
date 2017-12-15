@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 public class BookOrderService implements OrderService {
     @Override
-    public boolean order(User user, LocalDateTime timeOrder) {
-        return false;
+    public boolean order(OrderRequest orderRequest) {
+        return true;
     }
 }

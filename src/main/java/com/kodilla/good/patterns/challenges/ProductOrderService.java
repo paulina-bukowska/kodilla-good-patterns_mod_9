@@ -13,14 +13,16 @@ public class ProductOrderService {
     }
 
     public OrderDto process(final OrderRequest orderRequest) {
-        boolean isOrdered = orderService.order(orderRequest.getUser(), orderRequest.getTimeOrder());
+        boolean isOrdered = orderService.order(orderRequest);
 
         if(isOrdered) {
             informationService.inform(orderRequest.getUser());
-            orderRepository.createOrder(orderRequest.getUser(), orderRequest.getTimeOrder());
+            orderRepository.createOrder(orderRequest);
+            System.out.println("Order for " + orderRequest.getUser() + " is accepted");
             return new OrderDto(orderRequest.getUser(), true);
         }
         else {
+            System.out.println("There is a problem with the order for " + orderRequest.getUser());
             return new OrderDto(orderRequest.getUser(), false);
         }
     }
