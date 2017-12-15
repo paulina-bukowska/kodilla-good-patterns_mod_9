@@ -6,9 +6,11 @@ public class Customer {
     private String phoneNum;
     private String adress;
 
-    public Customer(String name, String surname) {
+    public Customer(String name, String surname, String phoneNum, String adress) {
         this.name = name;
         this.surname = surname;
+        this.phoneNum = phoneNum;
+        this.adress = adress;
     }
 
     public String getName() {
