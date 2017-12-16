@@ -8,7 +8,7 @@ public class OrderingProcessMain {
         Deliverer deliverer = new Deliverer("Extra Food Shop", "milk", 2.5);
         OrderRequest orderRequest = new OrderRequest(annGreenwood, deliverer.getProductType(), true);
 
-        OrderingProcess orderingProcess = new OrderingProcess();
+        OrderingProcess orderingProcess = new OrderingProcess(shop, deliverer);
         orderingProcess.order(orderRequest);
     }
 }
