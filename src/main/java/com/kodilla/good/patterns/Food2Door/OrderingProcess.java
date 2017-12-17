@@ -10,7 +10,7 @@ public class OrderingProcess {
     }
 
     public void order(OrderRequest orderRequest) {
-        if(orderRequest.getConfirmation() == true) {
+        if(orderRequest.getConfirmation()) {
             shop.process(deliverer);
             System.out.println("Deliver the order to: " + orderRequest.getCustomer().getAdress()
                     + " In case of any problems with delivery please inform customer "
