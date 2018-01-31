@@ -4,26 +4,26 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class FlightsRepository {
+    private static Set<Flight> flightsSet = new HashSet<>();
 
     public static Set<Flight> getFlightsSet() {
-        final Set<Flight> theSet = new HashSet<>();
-        theSet.add(new Flight("Gdansk", "Wroclaw"));
-        theSet.add(new Flight("Gdansk", "Krakow"));
-        theSet.add(new Flight("Gdansk", "Rzeszow"));
-        theSet.add(new Flight("Gdansk", "Warszawa"));
-        theSet.add(new Flight("Wroclaw", "Gdansk"));
-        theSet.add(new Flight("Wroclaw", "Szczecin"));
-        theSet.add(new Flight("Rzeszow", "Szczecin"));
-        theSet.add(new Flight("Szczecin", "Warszawa"));
-        theSet.add(new Flight("Warszawa", "Wroclaw"));
-        theSet.add(new Flight("Warszawa", "Gdansk"));
-        theSet.add(new Flight("Warszawa", "Szczecin"));
-        theSet.add(new Flight("Warszawa", "Rzeszow"));
-        theSet.add(new Flight("Warszawa", "Krakow"));
-        theSet.add(new Flight("Krakow", "Warszawa"));
-        theSet.add(new Flight("Krakow", "Wroclaw"));
-        theSet.add(new Flight("Krakow", "Gdansk"));
-        theSet.add(new Flight("Krakow", "Szczecin"));
-        return new HashSet<Flight>(theSet);
+        flightsSet.add(new Flight(Cities.GDANSK, Cities.WROCLAW));
+        flightsSet.add(new Flight(Cities.GDANSK, Cities.KRAKOW));
+        flightsSet.add(new Flight(Cities.GDANSK, Cities.RZESZOW));
+        flightsSet.add(new Flight(Cities.GDANSK, Cities.WARSZAWA));
+        flightsSet.add(new Flight(Cities.WROCLAW, Cities.GDANSK));
+        flightsSet.add(new Flight(Cities.WROCLAW, Cities.SZCZECIN));
+        flightsSet.add(new Flight(Cities.RZESZOW, Cities.SZCZECIN));
+        flightsSet.add(new Flight(Cities.SZCZECIN, Cities.WARSZAWA));
+        flightsSet.add(new Flight(Cities.WARSZAWA, Cities.WROCLAW));
+        flightsSet.add(new Flight(Cities.WARSZAWA, Cities.GDANSK));
+        flightsSet.add(new Flight(Cities.WARSZAWA, Cities.SZCZECIN));
+        flightsSet.add(new Flight(Cities.WARSZAWA, Cities.RZESZOW));
+        flightsSet.add(new Flight(Cities.WARSZAWA, Cities.KRAKOW));
+        flightsSet.add(new Flight(Cities.KRAKOW, Cities.WARSZAWA));
+        flightsSet.add(new Flight(Cities.KRAKOW, Cities.WROCLAW));
+        flightsSet.add(new Flight(Cities.KRAKOW, Cities.GDANSK));
+        flightsSet.add(new Flight(Cities.KRAKOW, Cities.SZCZECIN));
+        return flightsSet;
     }
 }

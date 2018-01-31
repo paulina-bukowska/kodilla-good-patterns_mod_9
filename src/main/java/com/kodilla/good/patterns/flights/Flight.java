@@ -1,19 +1,19 @@
 package com.kodilla.good.patterns.flights;
 
 public class Flight {
-    private String departureCity;
-    private String arrivalCity;
+    private Cities departureCity;
+    private Cities arrivalCity;
 
-    public Flight(String departureCity, String arrivalCity) {
+    public Flight(Cities departureCity, Cities arrivalCity) {
         this.departureCity = departureCity;
         this.arrivalCity = arrivalCity;
     }
 
-    public String getDepartureCity() {
+    public Cities getDepartureCity() {
         return departureCity;
     }
 
-    public String getArrivalCity() {
+    public Cities getArrivalCity() {
         return arrivalCity;
     }
 

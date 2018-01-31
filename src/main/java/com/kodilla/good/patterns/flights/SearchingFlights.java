@@ -1,30 +1,33 @@
 package com.kodilla.good.patterns.flights;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 
 public class SearchingFlights {
-    public static Set<Flight> flightsFromCity(String departureCity) {
+    public static List<Flight> flightsFromCity(Cities departureCity) {
         return FlightsRepository.getFlightsSet().stream()
                 .filter(flight -> flight.getDepartureCity() == departureCity)
-                .collect(Collectors.toSet());
+                .collect(Collectors.toList());
     }
 
-    public static Set<Flight> flightsToCity(String arrivalCity) {
+    public static List<Flight> flightsToCity(Cities arrivalCity) {
         return FlightsRepository.getFlightsSet().stream()
                 .filter(flight -> flight.getArrivalCity() == arrivalCity)
-                .collect(Collectors.toSet());
+                .collect(Collectors.toList());
     }
 
-    public static void flightWithTransfer (String departureCity, String transferCity, String arrivalCity) {
+    public static List<Flight> flightWithTransfer (Cities departureCity, Cities transferCity, Cities arrivalCity) {
         Flight firstStep = new Flight(departureCity, transferCity);
         Flight secondStep = new Flight(transferCity, arrivalCity);
+        List<Flight> allSteps = new ArrayList<>();
 
-        if(flightsFromCity(departureCity).contains(firstStep) && flightsToCity(arrivalCity).contains(secondStep)) {
-            System.out.println(firstStep);
-            System.out.println("!!! transfer !!!");
-            System.out.println(secondStep);
+        if(FlightsRepository.getFlightsSet().contains(firstStep) && FlightsRepository.getFlightsSet().contains(secondStep)) {
+            allSteps.add(firstStep);
+            allSteps.add(secondStep);
+        } else {
+            System.out.println("Connection you are searching doesn't exist.");
         }
+        return allSteps;
     }
 }
