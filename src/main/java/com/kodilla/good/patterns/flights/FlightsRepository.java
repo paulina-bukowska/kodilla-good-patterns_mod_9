@@ -7,23 +7,23 @@ public class FlightsRepository {
     private static Set<Flight> flightsSet = new HashSet<>();
 
     public static Set<Flight> getFlightsSet() {
-        flightsSet.add(new Flight(Cities.GDANSK, Cities.WROCLAW));
-        flightsSet.add(new Flight(Cities.GDANSK, Cities.KRAKOW));
-        flightsSet.add(new Flight(Cities.GDANSK, Cities.RZESZOW));
-        flightsSet.add(new Flight(Cities.GDANSK, Cities.WARSZAWA));
-        flightsSet.add(new Flight(Cities.WROCLAW, Cities.GDANSK));
-        flightsSet.add(new Flight(Cities.WROCLAW, Cities.SZCZECIN));
-        flightsSet.add(new Flight(Cities.RZESZOW, Cities.SZCZECIN));
-        flightsSet.add(new Flight(Cities.SZCZECIN, Cities.WARSZAWA));
-        flightsSet.add(new Flight(Cities.WARSZAWA, Cities.WROCLAW));
-        flightsSet.add(new Flight(Cities.WARSZAWA, Cities.GDANSK));
-        flightsSet.add(new Flight(Cities.WARSZAWA, Cities.SZCZECIN));
-        flightsSet.add(new Flight(Cities.WARSZAWA, Cities.RZESZOW));
-        flightsSet.add(new Flight(Cities.WARSZAWA, Cities.KRAKOW));
-        flightsSet.add(new Flight(Cities.KRAKOW, Cities.WARSZAWA));
-        flightsSet.add(new Flight(Cities.KRAKOW, Cities.WROCLAW));
-        flightsSet.add(new Flight(Cities.KRAKOW, Cities.GDANSK));
-        flightsSet.add(new Flight(Cities.KRAKOW, Cities.SZCZECIN));
+        flightsSet.add(new Flight(City.GDANSK, City.WROCLAW));
+        flightsSet.add(new Flight(City.GDANSK, City.KRAKOW));
+        flightsSet.add(new Flight(City.GDANSK, City.RZESZOW));
+        flightsSet.add(new Flight(City.GDANSK, City.WARSZAWA));
+        flightsSet.add(new Flight(City.WROCLAW, City.GDANSK));
+        flightsSet.add(new Flight(City.WROCLAW, City.SZCZECIN));
+        flightsSet.add(new Flight(City.RZESZOW, City.SZCZECIN));
+        flightsSet.add(new Flight(City.SZCZECIN, City.WARSZAWA));
+        flightsSet.add(new Flight(City.WARSZAWA, City.WROCLAW));
+        flightsSet.add(new Flight(City.WARSZAWA, City.GDANSK));
+        flightsSet.add(new Flight(City.WARSZAWA, City.SZCZECIN));
+        flightsSet.add(new Flight(City.WARSZAWA, City.RZESZOW));
+        flightsSet.add(new Flight(City.WARSZAWA, City.KRAKOW));
+        flightsSet.add(new Flight(City.KRAKOW, City.WARSZAWA));
+        flightsSet.add(new Flight(City.KRAKOW, City.WROCLAW));
+        flightsSet.add(new Flight(City.KRAKOW, City.GDANSK));
+        flightsSet.add(new Flight(City.KRAKOW, City.SZCZECIN));
         return flightsSet;
     }
 }

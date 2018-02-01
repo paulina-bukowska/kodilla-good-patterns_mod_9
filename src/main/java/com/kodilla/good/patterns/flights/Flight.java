@@ -1,19 +1,19 @@
 package com.kodilla.good.patterns.flights;
 
 public class Flight {
-    private Cities departureCity;
-    private Cities arrivalCity;
+    private City departureCity;
+    private City arrivalCity;
 
-    public Flight(Cities departureCity, Cities arrivalCity) {
+    public Flight(City departureCity, City arrivalCity) {
         this.departureCity = departureCity;
         this.arrivalCity = arrivalCity;
     }
 
-    public Cities getDepartureCity() {
+    public City getDepartureCity() {
         return departureCity;
     }
 
-    public Cities getArrivalCity() {
+    public City getArrivalCity() {
         return arrivalCity;
     }
 
@@ -25,6 +25,7 @@ public class Flight {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
+        if (o instanceof City) return true;
         if (!(o instanceof Flight)) return false;
 
         Flight flight = (Flight) o;

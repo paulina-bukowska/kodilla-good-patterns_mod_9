@@ -1,10 +1,10 @@
 package com.kodilla.good.patterns.flights;
 
-public enum Cities {
+public enum City {
     GDANSK,
     WROCLAW,
     RZESZOW,
     SZCZECIN,
     WARSZAWA,
-    KRAKOW
+    KRAKOW;
 }
