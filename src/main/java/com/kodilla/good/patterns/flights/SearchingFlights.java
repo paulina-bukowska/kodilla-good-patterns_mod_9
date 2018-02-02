@@ -20,7 +20,7 @@ public class SearchingFlights {
                 .collect(Collectors.toList());
     }
 
-    public static List<Flight> flightWithTransfer (City departureCity, City transferCity, City arrivalCity) {
+    public static List<Flight> flightsWithTransfer (City departureCity, City transferCity, City arrivalCity) {
         Flight firstStep = new Flight(departureCity, transferCity);
         Flight secondStep = new Flight(transferCity, arrivalCity);
         List<Flight> allSteps = new ArrayList<>();
@@ -28,13 +28,11 @@ public class SearchingFlights {
         if(FlightsRepository.getFlightsSet().contains(firstStep) && FlightsRepository.getFlightsSet().contains(secondStep)) {
             allSteps.add(firstStep);
             allSteps.add(secondStep);
-        } else {
-            System.out.println("Connection you are searching doesn't exist.");
         }
         return allSteps;
     }
 
-    public static List<List<Flight>> flightFromCityToCityWithTransfer(City departureCity, City arrivalCity) {
+    public static List<List<Flight>> flightFromCityToCityWithTransferMethod1(City departureCity, City arrivalCity) {
         List<City> cityNames = Stream.of(City.values())
                 .collect(Collectors.toList());
         List<Flight> flightsFromCity = flightsFromCity(departureCity);
@@ -59,6 +57,29 @@ public class SearchingFlights {
 
             if(flightsFromCity.contains(firstStep) && flightsToCity.contains(secondStep)) {
                 connections.add(allSteps);
+            }
+        }
+        return connections;
+    }
+
+    public static List<List<Flight>> flightFromCityToCityWithTransferMethod2(City departureCity, City arrivalCity) {
+        List<City> cityNames = Stream.of(City.values())
+                .collect(Collectors.toList());
+
+        Flight directly = new Flight(departureCity, arrivalCity);
+        List<Flight> list = new ArrayList<>();
+        list.add(directly);
+
+        List<List<Flight>> connections = new ArrayList<>();
+
+        if(FlightsRepository.getFlightsSet().contains(directly)) {
+            connections.add(list);
+        }
+
+        for(City city : cityNames) {
+            List<Flight> properConnection = flightsWithTransfer(departureCity, city, arrivalCity);
+            if(!properConnection.isEmpty()) {
+                connections.add(properConnection);
             }
         }
         return connections;
